@@ -1,0 +1,19 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+
+  &__logo {
+    text-indent: -9999px;
+    background-image: url("../../images/logo.svg");
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      a {
+      }
+    }
+  }
+}

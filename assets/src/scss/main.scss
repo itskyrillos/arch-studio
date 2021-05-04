@@ -1,0 +1,23 @@
+// ABSTRACTS
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+// BASE
+@import "./base/reset";
+@import "./base/typography";
+@import "../../../node_modules/swiper/swiper-bundle.css";
+
+// COMPONENTS
+@import "./components/buttons";
+@import "./components/slider";
+
+// LAYOUT
+@import "./layout/footer";
+@import "./layout/header";
+@import "./layout/navigation";
+
+// PAGES
+@import "./pages/home";
+@import "./pages/portfolio";
+@import "./pages/about";
+@import "./pages/contact";
