@@ -4,13 +4,13 @@
 body {
   font-family: "Spartan", sans-serif;
   font-size: 0.938rem;
-  font-weight: 500;
+  font-weight: $medium;
   line-height: 1.563rem;
 }
 
 .slider__title {
   font-size: 5rem;
-  font-weight: bold;
+  font-weight: $bold;
   line-height: 5rem;
   letter-spacing: -0.125rem;
   color: $white;
@@ -18,20 +18,20 @@ body {
 
 h1 {
   font-size: 12.5rem;
-  font-weight: bold;
+  font-weight: $bold;
   line-height: 12.5rem;
   letter-spacing: -0.313rem;
 }
 
 h2 {
   font-size: 3.5rem;
-  font-weight: bold;
+  font-weight: $bold;
   line-height: 3.5rem;
   letter-spacing: -0.125rem;
 }
 
 h3 {
   font-size: 1.125rem;
-  font-weight: bold;
+  font-weight: $bold;
   line-height: 1.125rem;
 }

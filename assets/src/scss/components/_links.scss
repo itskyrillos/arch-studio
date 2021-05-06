@@ -1,0 +1,14 @@
+.link {
+  &--arrow {
+    padding: 1.5rem 5rem 1.5rem 2rem;
+
+    font-weight: $bold;
+    text-decoration: none;
+    color: $white;
+    background-color: $very-dark-blue;
+
+    &:hover {
+      background-color: $dark-grey;
+    }
+  }
+}

@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<h3><?= the_title() ?></h3>
+<div class="page-title"><?= the_title() ?></div>
 
 <?php
 // the query
@@ -20,6 +20,7 @@ $query = new WP_Query($args); ?>
 
                 <?php
                 $linkPortfolio = get_field('home_header_link');
+                $textLinkPortfolio = get_field('home_header_link_text');
 
                 while ($query->have_posts()) : $query->the_post(); ?>
                     <div class="swiper-slide">
@@ -28,7 +29,8 @@ $query = new WP_Query($args); ?>
                             <div class="slider__title"><?= get_the_title(); ?></div>
                             <p><?= get_the_content(); ?></p>
                         </div>
-                        <a href="<?php echo esc_url($linkPortfolio); ?>"><?php the_field('home_header_link_text'); ?></a>
+                        <a class="slider__link link--arrow"
+                           href="<?php echo esc_url($linkPortfolio); ?>"><?php echo $textLinkPortfolio ?></a>
                     </div>
                 <?php endwhile; ?>
 

@@ -27,6 +27,12 @@
       color: $white;
     }
   }
+
+  &__link {
+    position: absolute;
+    bottom: 25%;
+    left: 15%;
+  }
 }
 
 .swiper-container {

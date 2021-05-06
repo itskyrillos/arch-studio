@@ -1,18 +1,37 @@
 .navigation {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  height: 150px;
+  width: 80vw;
+  margin: 0 auto;
 
   &__logo {
+    height: 40px;
+    width: 96px;
+
+    background: url("../images/logo.svg") center no-repeat;
+    background-size: contain;
+
     text-indent: -9999px;
-    background-image: url("../../images/logo.svg");
   }
 
   &__list {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-left: 5rem;
 
     li {
+      margin: 0 2rem;
       a {
+        font-weight: $bold;
+        color: $medium-grey;
+        text-decoration: none;
+
+        &:hover {
+          color: $very-dark-blue;
+        }
       }
     }
   }
