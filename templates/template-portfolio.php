@@ -7,23 +7,23 @@ Template Name: Portfolio
 
 get_header();
 ?>
+    <main data-barba="container" data-barba-namespace="portfolio">
+        <div class="page-title"><?= the_title() ?></div>
 
-    <div class="page-title"><?= the_title() ?></div>
+        <section class="portfolio">
 
-    <section class="portfolio">
+            <?php
+            // the query
+            $args = array(
+                'posts_per_page' => -1,
+                'post_type' => 'post',
+                'order' => 'DESC',
+                'category_name' => 'Portfolio'
+            );
 
-        <?php
-        // the query
-        $args = array(
-            'posts_per_page' => -1,
-            'post_type' => 'post',
-            'order' => 'DESC',
-            'category_name' => 'Portfolio'
-        );
+            $query = new WP_Query($args);
 
-        $query = new WP_Query($args);
-
-        if ($query->have_posts()) : ?>
+            if ($query->have_posts()) : ?>
 
                 <?php
 
@@ -44,8 +44,8 @@ get_header();
                 wp_reset_postdata();
 
             endif; ?>
-    </section>
-
+        </section>
+    </main>
 <?php
 get_footer();
 ?>

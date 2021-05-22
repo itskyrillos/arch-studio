@@ -12,7 +12,7 @@
     ?>
 </head>
 
-<body>
+<body data-barba="wrapper" >
 <div class="container">
     <nav class="navigation">
         <a class="navigation__logo" href="/">Home</a>
