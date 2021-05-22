@@ -6,6 +6,7 @@ body {
   font-size: 0.938rem;
   font-weight: $medium;
   line-height: 1.563rem;
+  color: $dark-grey;
 }
 
 .slider__title {
@@ -21,6 +22,7 @@ h1 {
   font-weight: $bold;
   line-height: 12.5rem;
   letter-spacing: -0.313rem;
+  color: $very-light-grey;
 }
 
 h2 {
@@ -28,10 +30,12 @@ h2 {
   font-weight: $bold;
   line-height: 3.5rem;
   letter-spacing: -0.125rem;
+  color: $very-dark-blue;
 }
 
 h3 {
   font-size: 1.125rem;
   font-weight: $bold;
   line-height: 1.125rem;
+  color: $white;
 }

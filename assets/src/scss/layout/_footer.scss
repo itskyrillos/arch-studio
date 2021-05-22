@@ -1,0 +1,67 @@
+.footer-navigation {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  /*justify-content: space-between;*/
+  align-items: center;
+  height: 12.5rem;
+  width: 100%;
+
+  background-color: $very-light-grey;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7.875rem;
+    height: 100%;
+    background-color: $white;
+  }
+
+  &__logo {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: relative;
+    text-indent: -9999px;
+    background-color: $very-dark-blue;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 2.5rem;
+      width: 6rem;
+
+      background: url("../images/logo-white.svg") center no-repeat;
+      background-size: cover;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 4.5rem;
+
+    li {
+      margin: 0 2rem;
+      a {
+        font-weight: $bold;
+        color: $medium-grey;
+        text-decoration: none;
+
+        &:hover {
+          color: $very-dark-blue;
+        }
+      }
+    }
+  }
+
+  &__link {
+    margin-left: auto;
+  }
+}

@@ -13,17 +13,19 @@
 </head>
 
 <body>
-<nav class="navigation">
-    <a class="navigation__logo" href="/">Home</a>
+<div class="container">
+    <nav class="navigation">
+        <a class="navigation__logo" href="/">Home</a>
 
-    <?php
-    wp_nav_menu(
-        array(
-            'menu' => 'primary',
-            'menu_class' => 'navigation__list',
-            'container' => '',
-            'theme_location' => 'primary'
-        )
-    );
-    ?>
-</nav>
+        <?php
+        wp_nav_menu(
+            array(
+                'menu' => 'primary',
+                'menu_class' => 'navigation__list',
+                'container' => '',
+                'theme_location' => 'primary'
+            )
+        );
+        ?>
+    </nav>
+

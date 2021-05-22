@@ -1,11 +1,25 @@
 .link {
   &--arrow {
-    padding: 1.5rem 5rem 1.5rem 2rem;
+    position: relative;
+    padding: 1.5rem 2rem 1.5rem 2rem;
 
     font-weight: $bold;
     text-decoration: none;
     color: $white;
     background-color: $very-dark-blue;
+
+    z-index: 100;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: 1.5rem;
+      width: 1.5rem;
+      height: 1.125rem;
+      background: url("../images/icon-arrow.svg") no-repeat center;
+      background-size: cover;
+      transform: translateY(25%);
+    }
 
     &:hover {
       background-color: $dark-grey;
