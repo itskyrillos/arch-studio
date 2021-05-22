@@ -9,6 +9,7 @@ get_header();
     <?php
     // the query
     $args = array(
+        'post_type' => 'post',
         'order' => 'ASC',
         'tag' => 'Slide',
         'post_per_page' => '4'
@@ -96,6 +97,7 @@ get_header();
     <?php
     // the query
     $args = array(
+        'post_type' => 'post',
         'order' => 'DESC',
         'tag' => 'Featured',
         'post_per_page' => '3'
