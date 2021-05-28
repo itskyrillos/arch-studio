@@ -11,13 +11,14 @@
   &__content-block {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
+
     padding-top: 6rem;
   }
 
   &__content {
-    align-self: flex-end;
     margin-right: 7.5rem;
-    width: 27.875rem;
+    width: 28rem;
   }
 
   &__content-title {
@@ -25,8 +26,9 @@
   }
 
   &__image {
-    width: 45%;
-    height: 38rem;
+    width: 35%;
+    height: 36rem;
+
     object-fit: cover;
     object-position: center;
   }
