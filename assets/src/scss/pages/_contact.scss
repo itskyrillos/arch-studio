@@ -1,0 +1,50 @@
+.contact {
+  height: 750px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  margin-bottom: 200px;
+
+  &__background {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    top: 0;
+    left: 0;
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &__content {
+    position: relative;
+    width: 40rem;
+    padding: 160px 0 0 180px;
+    z-index: 100;
+    background-color: $white;
+  }
+
+  &__content-title {
+    &::before {
+      content: "";
+      display: block;
+      width: 3.75rem;
+      height: 1px;
+      background-color: $light-grey;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__content-text {
+    margin-top: 3.125rem;
+  }
+}
