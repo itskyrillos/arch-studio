@@ -10,6 +10,8 @@
 
     z-index: 100;
 
+    transition: all 0.3s;
+
     &::after {
       content: "";
       display: inline-block;

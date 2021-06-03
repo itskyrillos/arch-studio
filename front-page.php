@@ -1,8 +1,9 @@
 <?php
 get_header();
 ?>
-<main data-barba="container" data-barba-namespace="home">
 
+
+<main data-barba="container" data-barba-namespace="home">
     <div class="page-title"><?= the_title() ?></div>
 
     <header>

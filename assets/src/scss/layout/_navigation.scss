@@ -4,6 +4,7 @@
   align-items: center;
   height: 9.375rem;
   width: 100%;
+  background-color: $white;
 
   &__logo {
     height: 2.5rem;
@@ -27,6 +28,8 @@
         font-weight: $bold;
         color: $medium-grey;
         text-decoration: none;
+
+        transition: color 0.3s;
 
         &:hover {
           color: $very-dark-blue;

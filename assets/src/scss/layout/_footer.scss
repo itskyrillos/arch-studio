@@ -54,6 +54,8 @@
         color: $medium-grey;
         text-decoration: none;
 
+        transition: color 0.3s;
+
         &:hover {
           color: $very-dark-blue;
         }
