@@ -13,6 +13,7 @@
 </head>
 
 <body data-barba="wrapper" >
+<div class="circle"></div>
 <div class="container">
     <nav class="navigation">
         <a class="navigation__logo" href="/">Home</a>

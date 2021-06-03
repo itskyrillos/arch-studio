@@ -1,0 +1,10 @@
+.circle {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid $very-dark-blue;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
