@@ -55,23 +55,23 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 200px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.75rem;
+    height: 1px;
+    background-color: $light-grey;
+  }
 
   &__content {
-    position: relative;
     max-width: 27.875rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 3.75rem;
-      height: 1px;
-      background-color: $light-grey;
-    }
   }
 
   &__content-title {
