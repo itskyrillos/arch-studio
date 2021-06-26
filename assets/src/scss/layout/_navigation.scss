@@ -3,18 +3,9 @@
   flex-direction: row;
   align-items: center;
   height: 9.375rem;
-  width: 100%;
+  width: 80%;
   background-color: $white;
-
-  &__logo {
-    height: 2.5rem;
-    width: 6rem;
-
-    background: url("../images/logo.svg") center no-repeat;
-    background-size: cover;
-
-    text-indent: -9999px;
-  }
+  margin: 0 auto;
 
   &__list {
     display: flex;

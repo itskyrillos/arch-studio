@@ -16,6 +16,10 @@
     object-position: center;
     top: 0;
     left: 0;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -31,6 +35,11 @@
     padding: 160px 0 0 180px;
     z-index: 100;
     background-color: $white;
+
+    @include tablet {
+      width: 35rem;
+      padding: 90px 0 0 50px;
+    }
   }
 
   &__content-title {
@@ -54,6 +63,12 @@
   padding: 4.375rem 0;
   display: flex;
   position: relative;
+  margin-bottom: 200px;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -68,17 +83,33 @@
     width: 12.5rem;
     white-space: pre-wrap;
     margin-right: 15rem;
+
+    @include tablet {
+      margin-bottom: 4rem;
+    }
   }
 
   &__office {
     display: flex;
     flex-direction: column;
-    margin-right: 5rem;
+    margin-right: 8rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-right: 0;
+    }
   }
 }
 
 .office {
   margin-bottom: 1.2rem;
+
+  @include tablet {
+    margin-bottom: 2rem;
+  }
+
   &__name {
     font-weight: $bold;
     color: $dark-grey;
@@ -93,6 +124,10 @@
     font-weight: $bold;
     color: $very-dark-blue;
     text-decoration: none;
+
+    @include tablet {
+      margin-bottom: 4rem;
+    }
 
     &:hover {
       text-decoration: underline;
@@ -111,5 +146,68 @@
   }
 }
 
+.form-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 200px;
+
+  @include tablet {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    width: 13rem;
+    white-space: pre-wrap;
+    //margin-right: 15rem;
+
+    @include tablet {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
 .form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 35rem;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    height: 4rem;
+    border: none;
+    border-bottom: 1px solid $very-dark-blue;
+    position: relative;
+
+    &::placeholder {
+      position: absolute;
+      font-family: "Spartan", sans-serif;
+      font-size: 1.25rem;
+      font-weight: $bold;
+      color: $light-grey;
+      left: 20px;
+      bottom: 20px;
+    }
+    &--name {
+      margin-bottom: 1rem;
+    }
+
+    &--email {
+      margin-bottom: 1rem;
+    }
+
+    &--text {
+      height: 100px;
+      &::placeholder {
+        top: 20px;
+      }
+    }
+    &--send {
+    }
+  }
 }

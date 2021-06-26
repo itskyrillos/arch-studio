@@ -21,4 +21,8 @@
 
     transform: translateY(-50%);
   }
+
+  @include phone {
+    display: none;
+  }
 }

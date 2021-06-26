@@ -1,4 +1,8 @@
 .container {
   margin: 0 auto;
   width: 80vw;
+
+  @include phone {
+    width: 100vw;
+  }
 }

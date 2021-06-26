@@ -16,6 +16,10 @@
     object-position: center;
     top: 0;
     left: 0;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -31,6 +35,11 @@
     padding: 160px 0 0 180px;
     z-index: 100;
     background-color: $white;
+
+    @include tablet {
+      width: 35rem;
+      padding: 90px 0 0 50px;
+    }
   }
 
   &__content-title {
@@ -57,6 +66,11 @@
   margin-bottom: 200px;
   position: relative;
 
+  @include tablet {
+    height: auto;
+    padding-top: 5rem;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -68,10 +82,14 @@
   }
 
   &__content {
-    max-width: 27.875rem;
+    width: 27.875rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__content-title {
@@ -89,6 +107,10 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+
+    @include tablet {
+      display: none;
+    }
   }
 }
 
@@ -97,9 +119,18 @@
   justify-content: space-between;
   margin-bottom: 200px;
 
+  @include tablet {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   &__title {
     width: 5px;
     white-space: pre-wrap;
+
+    @include tablet {
+      margin-bottom: 5rem;
+    }
   }
 
   &__cards {
@@ -107,6 +138,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.875rem;
     width: 65%;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 }
 
