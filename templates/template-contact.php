@@ -30,8 +30,8 @@ get_header();
     <section class="details">
         <h2 class="details__title"><?php the_field('contact_details_title'); ?></h2>
 
-        <?php if( have_rows('contact_details_1') ): ?>
-            <?php while( have_rows('contact_details_1') ): the_row();
+        <?php if (have_rows('contact_details_1')) : ?>
+            <?php while (have_rows('contact_details_1')) : the_row();
 
                 // Get sub field values.
 
@@ -53,14 +53,15 @@ get_header();
                             <li class="office__details-phone">Phone: <?php echo $officePhone ?></li>
                         </ul>
                     </div>
-                    <a class="office__map-link" target="_blank" href="<?php echo esc_url( $officeMapLink['url'] ); ?>"><?php echo $officeMapLinkText; ?></a>
+                    <a class="office__map-link" target="_blank"
+                       href="<?php echo esc_url($officeMapLink['url']); ?>"><?php echo $officeMapLinkText; ?></a>
                 </div>
 
             <?php endwhile; ?>
         <?php endif; ?>
 
-        <?php if( have_rows('contact_details_2') ): ?>
-            <?php while( have_rows('contact_details_2') ): the_row();
+        <?php if (have_rows('contact_details_2')) : ?>
+            <?php while (have_rows('contact_details_2')) : the_row();
 
                 // Get sub field values.
 
@@ -82,7 +83,8 @@ get_header();
                             <li class="office__details-phone">Phone: <?php echo $officePhone ?></li>
                         </ul>
                     </div>
-                    <a class="office__map-link" target="_blank" href="<?php echo esc_url( $officeMapLink['url'] ); ?>"><?php echo $officeMapLinkText; ?></a>
+                    <a class="office__map-link" target="_blank"
+                       href="<?php echo esc_url($officeMapLink['url']); ?>"><?php echo $officeMapLinkText; ?></a>
                 </div>
 
             <?php endwhile; ?>
@@ -90,7 +92,16 @@ get_header();
 
     </section>
 
-    <section class="form">
+    <section class="form-section">
+        <h2 class="form-section__title"><?php the_field('contact_form_title'); ?></h2>
+        <form action="" class="form">
+            <input class="form__input form__input--name" type="text" placeholder="Name">
+            <input class="form__input form__input--email" type="email" placeholder="Email">
+            <textarea class="form__input form__input--text" placeholder="Message"></textarea>
+            <span class="btn-send form__input--send">
+                <input type="submit">
+            </span>
+        </form>
 
     </section>
 </main>
