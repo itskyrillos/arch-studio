@@ -15,12 +15,12 @@
 
 // BREAKPOINTS
 @mixin phone {
-  @media only screen and (max-width:#{$small-screen}) {
+  @media only screen and (max-width: 767px) {
     @content;
   }
 }
 @mixin tablet {
-  @media only screen and (max-width:#{$medium-screen}) {
+  @media only screen and (max-width: 1279px) {
     @content;
   }
 }
