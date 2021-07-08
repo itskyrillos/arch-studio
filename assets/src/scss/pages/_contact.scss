@@ -183,6 +183,16 @@
     border: none;
     border-bottom: 1px solid $very-dark-blue;
     position: relative;
+    font-family: "Spartan", sans-serif;
+    font-size: 0.938rem;
+    font-weight: $medium;
+    line-height: 1.563rem;
+    color: $dark-grey;
+    padding: 20px;
+
+    &:focus {
+      outline: none;
+    }
 
     &::placeholder {
       position: absolute;
@@ -202,7 +212,9 @@
     }
 
     &--text {
-      height: 100px;
+      height: 150px;
+      resize: none;
+
       &::placeholder {
         top: 20px;
       }

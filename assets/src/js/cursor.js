@@ -1,32 +1,33 @@
-/*let mouseCursor = document.querySelector(".circle");
+window.addEventListener("resize", screenSize);
 
-window.addEventListener("mousemove", cursor);
+function screenSize() {
+  return window.innerWidth;
+}
 
-function cursor(e) {
-  mouseCursor.style.top = e.pageY + "px";
-  mouseCursor.style.left = e.pageX + "px";
-}*/
+console.log(screenSize);
 
-let mousePosX = 0,
-  mousePosY = 0,
-  mouseCircle = document.querySelector(".circle");
+if (screenSize >= 1280) {
+  let mousePosX = 0,
+    mousePosY = 0,
+    mouseCircle = document.querySelector(".circle");
 
-document.onmousemove = (e) => {
-  mousePosX = e.pageX;
-  mousePosY = e.pageY;
-};
+  document.onmousemove = (e) => {
+    mousePosX = e.pageX;
+    mousePosY = e.pageY;
+  };
 
-let delay = 6,
-  revisedMousePosX = 0,
-  revisedMousePosY = 0;
+  let delay = 6,
+    revisedMousePosX = 0,
+    revisedMousePosY = 0;
 
-const delayMouseFollow = () => {
-  requestAnimationFrame(delayMouseFollow);
+  const delayMouseFollow = () => {
+    requestAnimationFrame(delayMouseFollow);
 
-  revisedMousePosX += (mousePosX - revisedMousePosX) / delay;
-  revisedMousePosY += (mousePosY - revisedMousePosY) / delay;
+    revisedMousePosX += (mousePosX - revisedMousePosX) / delay;
+    revisedMousePosY += (mousePosY - revisedMousePosY) / delay;
 
-  mouseCircle.style.top = revisedMousePosY + "px";
-  mouseCircle.style.left = revisedMousePosX + "px";
-};
-delayMouseFollow();
+    mouseCircle.style.top = revisedMousePosY + "px";
+    mouseCircle.style.left = revisedMousePosX + "px";
+  };
+  delayMouseFollow();
+}

@@ -1,6 +1,13 @@
 import barba from "@barba/core";
 import { gsap } from "gsap";
 
+barba.hooks.enter(() => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+  });
+});
+
 barba.init({
   transitions: [
     {

@@ -13,7 +13,8 @@
 </head>
 
 <body data-barba="wrapper">
-<div class="circle"></div>
+
+<div class="navigation__background"></div>
 
 <nav class="navigation">
     <a class="navigation__logo" href="/">
@@ -32,9 +33,9 @@
     ?>
 
     <button class="navigation__toggler">
-        <span class="line1"></span>
-        <span class="line2"></span>
-        <span class="line3"></span>
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
     </button>
 </nav>
 <div class="container">
