@@ -54,7 +54,8 @@ get_header();
     </header>
 
     <section class="welcome">
-        <h1 class="welcome__title"><?php the_field("home_main_title"); ?></h1>
+        <h1 class="welcome__title" data-scroll data-scroll-direction="horizontal"
+            data-scroll-speed="1"><?php the_field("home_main_title"); ?></h1>
 
         <div class="welcome__content-block">
             <div class="welcome__content">
@@ -63,22 +64,27 @@ get_header();
                 <div class="welcome__content-text"><?php the_field('home_welcome_text'); ?></div>
             </div>
 
-            <?php
-            $image = get_field('home_welcome_image');
+            <div class="welcome__image">
+                <?php
+                $image = get_field('home_welcome_image');
 
-            if (!empty($image)) : ?>
-                <img class="welcome__image" src="<?php echo esc_url($image['url']); ?>" alt=""/>
-            <?php endif; ?>
+                if (!empty($image)) : ?>
+                    <img data-scroll data-scroll-speed="1"
+                         src="<?php echo esc_url($image['url']); ?>" alt=""/>
+                <?php endif; ?>
+            </div>
         </div>
     </section>
 
     <section class="team">
+        <div class="team__background">
         <?php
         $image = get_field('home_about_background');
 
         if (!empty($image)) : ?>
-            <img class="team__background" src="<?php echo esc_url($image['url']); ?>" alt=""/>
+            <img data-scroll data-scroll-speed="1" src="<?php echo esc_url($image['url']); ?>" alt=""/>
         <?php endif; ?>
+        </div>
 
         <div class="team__content">
             <?php the_field("home_about_title"); ?>
@@ -136,6 +142,8 @@ get_header();
 
             endif; ?>
         </div>
+        <a class="featured__link--bottom link--bottom"
+           href="<?php the_field('home_featured_link'); ?>"><?php the_field('home_featured_link_text'); ?></a>
     </section>
 </main>
 <?php

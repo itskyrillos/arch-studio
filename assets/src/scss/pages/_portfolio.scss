@@ -17,6 +17,10 @@
       height: 300px;
     }
 
+    @include phone {
+      padding: 0 30px;
+    }
+
     &:hover {
       opacity: 0.5;
     }

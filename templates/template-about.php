@@ -68,6 +68,13 @@ get_header();
                         <h3 class="card__name"><?php echo $leaderName; ?></h3>
 
                         <p class="card__role"><?php echo $leaderRole; ?></p>
+
+                        <div class="card__links--bottom">
+                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+
+                            <a class="card__link--bottom card__link--bottom-twitter" target="_blank"
+                               href="<?php echo $linkTwitter; ?>">Twitter</a>
+                        </div>
                     </div>
 
                 <?php endwhile; ?>
@@ -98,6 +105,13 @@ get_header();
                         <h3 class="card__name"><?php echo $leaderName; ?></h3>
 
                         <p class="card__role"><?php echo $leaderRole; ?></p>
+
+                        <div class="card__links--bottom">
+                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+
+                            <a class="card__link--bottom card__link--bottom-twitter" target="_blank"
+                               href="<?php echo $linkTwitter; ?>">Twitter</a>
+                        </div>
                     </div>
 
                 <?php endwhile; ?>
@@ -128,6 +142,13 @@ get_header();
                         <h3 class="card__name"><?php echo $leaderName; ?></h3>
 
                         <p class="card__role"><?php echo $leaderRole; ?></p>
+
+                        <div class="card__links--bottom">
+                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+
+                            <a class="card__link--bottom card__link--bottom-twitter" target="_blank"
+                               href="<?php echo $linkTwitter; ?>">Twitter</a>
+                        </div>
                     </div>
 
                 <?php endwhile; ?>
@@ -158,6 +179,13 @@ get_header();
                         <h3 class="card__name"><?php echo $leaderName; ?></h3>
 
                         <p class="card__role"><?php echo $leaderRole; ?></p>
+
+                        <div class="card__links--bottom">
+                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+
+                            <a class="card__link--bottom card__link--bottom-twitter" target="_blank"
+                               href="<?php echo $linkTwitter; ?>">Twitter</a>
+                        </div>
                     </div>
 
                 <?php endwhile; ?>

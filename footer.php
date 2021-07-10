@@ -2,7 +2,7 @@
 <footer>
     <nav class="footer-navigation">
 
-        <a class="footer-navigation__logo" href="/">
+        <a class="footer-navigation__logo" href="<?php echo home_url(); ?>">
             Home
         </a>
 

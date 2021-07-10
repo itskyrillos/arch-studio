@@ -27,4 +27,33 @@
       background-color: $dark-grey;
     }
   }
+
+  &--bottom {
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-weight: $bold;
+    text-decoration: none;
+    color: $white;
+    background-color: $very-dark-blue;
+
+    z-index: 100;
+
+    transition: all 0.3s;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: 1.5rem;
+      width: 1.5rem;
+      height: 1.125rem;
+      background: url("../images/icon-arrow.svg") no-repeat center;
+      background-size: cover;
+      transform: translateY(25%);
+    }
+
+    &:hover {
+      background-color: $dark-grey;
+    }
+  }
 }

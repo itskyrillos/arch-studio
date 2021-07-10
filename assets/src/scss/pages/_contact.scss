@@ -8,6 +8,11 @@
 
   margin-bottom: 200px;
 
+  @include phone {
+    height: auto;
+    margin-bottom: 100px;
+  }
+
   &__background {
     position: absolute;
     width: 60%;
@@ -20,6 +25,10 @@
     @include tablet {
       width: 100%;
     }
+
+    @include phone {
+      height: 60%;
+    }
   }
 
   &__title {
@@ -27,6 +36,10 @@
     top: 0;
     right: 0;
     transform: translateY(-50%);
+
+    @include phone {
+      display: none;
+    }
   }
 
   &__content {
@@ -40,6 +53,12 @@
       width: 35rem;
       padding: 90px 0 0 50px;
     }
+
+    @include phone {
+      padding: 90px 0 0 30px;
+      margin-top: 300px;
+      margin-right: 30px;
+    }
   }
 
   &__content-title {
@@ -50,6 +69,10 @@
       height: 1px;
       background-color: $light-grey;
       margin-bottom: 80px;
+
+      @include phone {
+        display: none;
+      }
     }
   }
 
@@ -60,13 +83,19 @@
 
 .details {
   width: 100%;
-  padding: 4.375rem 0;
+  padding-top: 4.375rem;
   display: flex;
   position: relative;
   margin-bottom: 200px;
 
   @include tablet {
     flex-direction: column;
+  }
+
+  @include phone {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 100px;
   }
 
   &::before {
@@ -77,6 +106,10 @@
     width: 3.75rem;
     height: 1px;
     background-color: $light-grey;
+
+    @include phone {
+      left: 30px;
+    }
   }
 
   &__title {
@@ -99,6 +132,12 @@
       justify-content: space-between;
       align-items: flex-end;
       margin-right: 0;
+    }
+
+    @include phone {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
 }
@@ -154,6 +193,10 @@
   @include tablet {
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  @include phone {
+    padding: 0 30px;
   }
 
   &__title {

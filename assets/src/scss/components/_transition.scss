@@ -1,0 +1,23 @@
+.transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+
+  &__background {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      width: 20%;
+    }
+  }
+
+  &__logo-container {
+  }
+
+  &__logo {
+  }
+}
