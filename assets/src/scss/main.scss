@@ -6,7 +6,8 @@
 @import "./base/reset";
 @import "./base/typography";
 @import "./base/cursor";
-@import "../../../node_modules/swiper/swiper-bundle.css";
+@import "../../../node_modules/swiper/swiper";
+@import "../../../node_modules/swiper/components/pagination/pagination";
 @import "../../../node_modules/locomotive-scroll/dist/locomotive-scroll.css";
 
 // COMPONENTS
@@ -14,6 +15,7 @@
 @import "./components/links";
 @import "./components/page-title";
 @import "./components/slider";
+@import "components/transition";
 
 // LAYOUT
 @import "./layout/container";

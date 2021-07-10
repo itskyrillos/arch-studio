@@ -12,12 +12,23 @@
     ?>
 </head>
 
-<body data-barba="wrapper">
+<body data-barba="wrapper" data-scroll-container>
 
-<div class="navigation__background"></div>
+<div class="transition">
+    <ul class="transition__background">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="transition__logo-container">
+        <div class="transition__logo"></div>
+    </div>
+</div>
 
 <nav class="navigation">
-    <a class="navigation__logo" href="/">
+    <a class="navigation__logo" href="<?php echo home_url(); ?>">
         Home
     </a>
 
