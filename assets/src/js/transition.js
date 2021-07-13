@@ -1,77 +1,73 @@
 import barba from "@barba/core";
 import { gsap } from "gsap";
-// import Swiper from "swiper";
-// import LocomotiveScroll from "locomotive-scroll";
-
-// const swiper = new Swiper();
-
-// const scroll = new LocomotiveScroll({
-//   el: document.querySelector("[data-scroll-container]"),
-//   smooth: true,
-// });
 
 barba.hooks.enter(() => {
-  // swiper.init();
-
   window.scrollTo({
     top: 0,
     left: 0,
   });
 });
 
-// barba.hooks.beforeLeave(() => {
-//   scroll.destroy();
-// });
-//
-// barba.hooks.after(() => {
-//   scroll.init();
-// });
-
 let tl = gsap.timeline();
 
-const animationLeave = () => {
-  tl.to(".transition", { display: "block" })
-    .to(".transition__background li", {
-      duration: 1,
+const animationLeave = (done) => {
+  tl.to(".transition", { display: "block", duration: 0 })
+    .to(".layer1", {
+      duration: 0.7,
       scaleY: 1,
       transformOrigin: "bottom left",
-      stagger: 0.2,
-      ease: "expo.inOut",
+      ease: "power3.inOut",
     })
-    .from(".transition__logo", {
-      y: 220,
-      duration: 1,
-      ease: "Power3.easeOut",
+    .to(".layer2", {
+      duration: 0.7,
+      delay: -0.6,
+      scaleY: 1,
+      transformOrigin: "bottom left",
+      ease: "power3.inOut",
+    })
+    .to(".layer3", {
+      duration: 0.7,
+      delay: -0.5,
+      scaleY: 1,
+      transformOrigin: "bottom left",
+      ease: "power3.inOut",
+      onComplete: () => done(),
     });
 };
 
 const animationEnter = () => {
-  tl.to(".transition__logo", {
-    delay: 1,
-    y: -220,
-    duration: 1,
-    ease: "power4.out",
+  tl.to(".layer3", {
+    duration: 0.7,
+    scaleY: 0,
+    transformOrigin: "top left",
+    ease: "power3.inOut",
   })
-    .to(".transition__background li", {
-      duration: 1,
+    .to(".layer2", {
+      duration: 0.7,
+      delay: -0.6,
       scaleY: 0,
       transformOrigin: "top left",
-      stagger: 0.2,
-      ease: "expo.inOut",
+      ease: "power3.inOut",
     })
-
-    .to(".transition", { display: "none" });
+    .to(".layer1", {
+      duration: 0.7,
+      delay: -0.5,
+      scaleY: 0,
+      transformOrigin: "top left",
+      ease: "power3.inOut",
+    })
+    .to(".transition", { display: "none", duration: 0 });
 };
 
 barba.init({
   transitions: [
     {
-      sync: true,
-      name: "transition",
+      name: "page-transition",
       leave(data) {
-        animationLeave();
+        const done = this.async();
+        animationLeave(done);
       },
-      after(data) {
+      enter(data) {
         animationEnter();
       },
     },

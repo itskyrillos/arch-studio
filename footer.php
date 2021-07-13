@@ -1,5 +1,5 @@
 </div>
-<footer>
+<footer data-scroll-section>
     <nav class="footer-navigation">
 
         <a class="footer-navigation__logo" href="<?php echo home_url(); ?>">
@@ -27,6 +27,6 @@
 <?php
 wp_footer();
 ?>
-
+</div>
 </body>
 </html>

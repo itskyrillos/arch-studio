@@ -7,14 +7,14 @@ Template Name: Contact
 get_header();
 ?>
 
-<main data-barba="container" data-barba-namespace="portfolio">
+<main data-barba="container" data-barba-namespace="contact">
     <div class="page-title"><?= the_title() ?></div>
 
     <section class="contact">
         <?php
         $imageContact = get_field('contact_image');
         if (!empty($imageContact)) : ?>
-            <img class="contact__background" src="<?php echo esc_url($imageContact['url']); ?>" alt=""/>
+            <img data-scroll data-scroll-speed="1" class="contact__background" src="<?php echo esc_url($imageContact['url']); ?>" alt=""/>
         <?php endif; ?>
 
         <div class="contact__content">

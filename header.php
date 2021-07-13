@@ -12,22 +12,18 @@
     ?>
 </head>
 
-<body data-barba="wrapper" data-scroll-container>
-
+<body data-barba="wrapper" >
 <div class="transition">
-    <ul class="transition__background">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <div class="transition__logo-container">
-        <div class="transition__logo"></div>
-    </div>
+    <div class="transition__layer layer1"></div>
+    <div class="transition__layer layer2"></div>
+    <div class="transition__layer layer3"></div>
 </div>
 
-<nav class="navigation">
+<div data-scroll-container>
+
+
+
+<nav class="navigation" data-scroll-section>
     <a class="navigation__logo" href="<?php echo home_url(); ?>">
         Home
     </a>
@@ -49,5 +45,5 @@
         <span class="line line3"></span>
     </button>
 </nav>
-<div class="container">
+<div class="container" data-scroll-section>
 

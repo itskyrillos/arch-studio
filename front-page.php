@@ -54,8 +54,7 @@ get_header();
     </header>
 
     <section class="welcome">
-        <h1 class="welcome__title" data-scroll data-scroll-direction="horizontal"
-            data-scroll-speed="1"><?php the_field("home_main_title"); ?></h1>
+        <h1 class="welcome__title"><?php the_field("home_main_title"); ?></h1>
 
         <div class="welcome__content-block">
             <div class="welcome__content">
@@ -69,7 +68,7 @@ get_header();
                 $image = get_field('home_welcome_image');
 
                 if (!empty($image)) : ?>
-                    <img data-scroll data-scroll-speed="1"
+                    <img data-scroll data-scroll-speed="-1"
                          src="<?php echo esc_url($image['url']); ?>" alt=""/>
                 <?php endif; ?>
             </div>
@@ -78,12 +77,12 @@ get_header();
 
     <section class="team">
         <div class="team__background">
-        <?php
-        $image = get_field('home_about_background');
+            <?php
+            $image = get_field('home_about_background');
 
-        if (!empty($image)) : ?>
-            <img data-scroll data-scroll-speed="1" src="<?php echo esc_url($image['url']); ?>" alt=""/>
-        <?php endif; ?>
+            if (!empty($image)) : ?>
+                <img data-scroll data-scroll-speed="-1" src="<?php echo esc_url($image['url']); ?>" alt=""/>
+            <?php endif; ?>
         </div>
 
         <div class="team__content">

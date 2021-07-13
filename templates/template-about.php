@@ -7,14 +7,14 @@
 get_header();
 ?>
 
-<main data-barba="container" data-barba-namespace="portfolio">
+<main data-barba="container" data-barba-namespace="about">
     <div class="page-title"><?= the_title() ?></div>
 
     <section class="about">
         <?php
         $imageAbout = get_field('about_image');
         if (!empty($imageAbout)) : ?>
-            <img class="about__background" src="<?php echo esc_url($imageAbout['url']); ?>" alt=""/>
+            <img data-scroll data-scroll-speed="1" class="about__background" src="<?php echo esc_url($imageAbout['url']); ?>" alt=""/>
         <?php endif; ?>
 
         <div class="about__content">
@@ -36,7 +36,7 @@ get_header();
         <?php
         $imageHeritage = get_field('about_heritage_image');
         if (!empty($imageHeritage)) : ?>
-            <img class="heritage__image" src="<?php echo esc_url($imageHeritage['url']); ?>" alt=""/>
+            <img data-scroll data-scroll-speed="1" class="heritage__image" src="<?php echo esc_url($imageHeritage['url']); ?>" alt=""/>
         <?php endif; ?>
     </section>
 

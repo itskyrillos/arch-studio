@@ -3,4 +3,5 @@ import "./slider";
 import "./transition";
 import "./cursor";
 import "./toggler";
-import "./hideMenu";
+import "./scroll";
+// import "./hideMenu";
