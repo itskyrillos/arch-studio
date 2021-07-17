@@ -9,7 +9,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const swiper = new Swiper(".swiper-container", {
   autoplay: {
-    delay: 5000,
+    delay: 9000,
   },
   pagination: {
     el: ".swiper-pagination",

@@ -30,7 +30,10 @@ get_header();
                 while ($query->have_posts()) : $query->the_post(); ?>
                     <a class="portfolio__post-link" href="<?php the_permalink(); ?>">
                         <article class="portfolio__post">
-                            <img class="post__image" src="<?= the_post_thumbnail_url('full'); ?>" alt="">
+                            <div class="post__image">
+                                <img data-scroll data-scroll-speed="-1" loading="lazy"
+                                     src="<?= the_post_thumbnail_url('full'); ?>" alt="">
+                            </div>
 
                             <div class="post__content">
                                 <h3 class="post__content-title"><?= get_the_title(); ?></h3>

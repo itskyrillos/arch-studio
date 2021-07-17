@@ -1,7 +1,5 @@
 import "../scss/main.scss";
 import "./slider";
-import "./transition";
+import "./animation";
 import "./cursor";
 import "./toggler";
-import "./scroll";
-// import "./hideMenu";

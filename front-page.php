@@ -30,7 +30,8 @@ get_header();
 
                         while ($query->have_posts()) : $query->the_post(); ?>
                             <div class="swiper-slide">
-                                <img class="slider__image" src="<?= the_post_thumbnail_url('full'); ?>" alt="">
+                                <img class="slider__image" loading="lazy" src="<?= the_post_thumbnail_url('full'); ?>"
+                                     alt="">
 
                                 <div class="slider__content">
                                     <div class="slider__title"><?= get_the_title(); ?></div>
@@ -54,7 +55,7 @@ get_header();
     </header>
 
     <section class="welcome">
-        <h1 class="welcome__title"><?php the_field("home_main_title"); ?></h1>
+        <h1 class="welcome__title" data-scroll data-scroll-speed="1"><?php the_field("home_main_title"); ?></h1>
 
         <div class="welcome__content-block">
             <div class="welcome__content">
@@ -68,24 +69,25 @@ get_header();
                 $image = get_field('home_welcome_image');
 
                 if (!empty($image)) : ?>
-                    <img data-scroll data-scroll-speed="-1"
-                         src="<?php echo esc_url($image['url']); ?>" alt=""/>
+                    <img data-scroll data-scroll-speed="-1" loading="lazy" src="<?php echo esc_url($image['url']); ?>"
+                         alt=""/>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
-    <section class="team">
+    <section class="team" data-scroll>
         <div class="team__background">
             <?php
             $image = get_field('home_about_background');
 
             if (!empty($image)) : ?>
-                <img data-scroll data-scroll-speed="-1" src="<?php echo esc_url($image['url']); ?>" alt=""/>
+                <img data-scroll data-scroll-speed="-1" loading="lazy" src="<?php echo esc_url($image['url']); ?>"
+                     alt=""/>
             <?php endif; ?>
         </div>
 
-        <div class="team__content">
+        <div class="team__content" data-scroll data-scroll-speed="1">
             <?php the_field("home_about_title"); ?>
 
             <a class="team__link link--arrow"
@@ -122,7 +124,10 @@ get_header();
                 while ($query->have_posts()) : $query->the_post(); ?>
                     <a class="featured__post-link" href="<?php echo esc_url($linkPortfolio); ?>">
                         <article class="featured__post">
-                            <img class="post__image" src="<?= the_post_thumbnail_url('full'); ?>" alt="">
+                            <div class="post__image">
+                                <img data-scroll data-scroll-speed="-1" loading="lazy"
+                                     src="<?= the_post_thumbnail_url('full'); ?>" alt="">
+                            </div>
 
                             <div class="post__number"><?php echo $postNumber; ?></div>
 

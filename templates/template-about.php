@@ -11,11 +11,14 @@ get_header();
     <div class="page-title"><?= the_title() ?></div>
 
     <section class="about">
-        <?php
-        $imageAbout = get_field('about_image');
-        if (!empty($imageAbout)) : ?>
-            <img data-scroll data-scroll-speed="1" class="about__background" src="<?php echo esc_url($imageAbout['url']); ?>" alt=""/>
-        <?php endif; ?>
+        <div class="about__background">
+            <?php
+            $imageAbout = get_field('about_image');
+            if (!empty($imageAbout)) : ?>
+                <img data-scroll data-scroll-speed="-2" loading="lazy" src="<?php echo esc_url($imageAbout['url']); ?>"
+                     alt=""/>
+            <?php endif; ?>
+        </div>
 
         <div class="about__content">
             <h1 class="about__title"><?php the_field('about_main_title'); ?></h1>
@@ -32,12 +35,14 @@ get_header();
             <h2 class="heritage__content-title"><?php the_field('about_heritage_title'); ?></h2>
             <div class="heritage__content-text"><?php the_field('about_heritage_text'); ?></div>
         </div>
-
-        <?php
-        $imageHeritage = get_field('about_heritage_image');
-        if (!empty($imageHeritage)) : ?>
-            <img data-scroll data-scroll-speed="1" class="heritage__image" src="<?php echo esc_url($imageHeritage['url']); ?>" alt=""/>
-        <?php endif; ?>
+        <div class="heritage__image">
+            <?php
+            $imageHeritage = get_field('about_heritage_image');
+            if (!empty($imageHeritage)) : ?>
+                <img data-scroll data-scroll-speed="-1" loading="lazy"
+                     src="<?php echo esc_url($imageHeritage['url']); ?>" alt=""/>
+            <?php endif; ?>
+        </div>
     </section>
 
     <section class="leaders">
@@ -54,11 +59,14 @@ get_header();
                     ?>
                     <div class="card">
                         <div class="card__image">
-                            <img class="card__avatar" src="<?php echo esc_url($leaderAvatar['url']); ?>"
-                                 alt="<?php echo esc_attr($leaderAvatar['alt']); ?>"/>
+                            <div class="card__avatar">
+                                <img data-scroll data-scroll-speed="-1" src="<?php echo esc_url($leaderAvatar['url']); ?>"
+                                     alt="<?php echo esc_attr($leaderAvatar['alt']); ?>"/>
+                            </div>
 
                             <div class="card__links">
-                                <a class="card__link card__link--linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+                                <a class="card__link card__link--linkedin" target="_blank"
+                                   href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
 
                                 <a class="card__link card__link--twitter" target="_blank"
                                    href="<?php echo $linkTwitter; ?>">Twitter</a>
@@ -70,7 +78,8 @@ get_header();
                         <p class="card__role"><?php echo $leaderRole; ?></p>
 
                         <div class="card__links--bottom">
-                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank"
+                               href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
 
                             <a class="card__link--bottom card__link--bottom-twitter" target="_blank"
                                href="<?php echo $linkTwitter; ?>">Twitter</a>
@@ -91,11 +100,14 @@ get_header();
                     ?>
                     <div class="card">
                         <div class="card__image">
-                            <img class="card__avatar" src="<?php echo esc_url($leaderAvatar['url']); ?>"
-                                 alt="<?php echo esc_attr($leaderAvatar['alt']); ?>"/>
+                            <div class="card__avatar">
+                                <img data-scroll data-scroll-speed="-1" src="<?php echo esc_url($leaderAvatar['url']); ?>"
+                                     alt="<?php echo esc_attr($leaderAvatar['alt']); ?>"/>
+                            </div>
 
                             <div class="card__links">
-                                <a class="card__link card__link--linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+                                <a class="card__link card__link--linkedin" target="_blank"
+                                   href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
 
                                 <a class="card__link card__link--twitter" target="_blank"
                                    href="<?php echo $linkTwitter; ?>">Twitter</a>
@@ -107,7 +119,8 @@ get_header();
                         <p class="card__role"><?php echo $leaderRole; ?></p>
 
                         <div class="card__links--bottom">
-                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank"
+                               href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
 
                             <a class="card__link--bottom card__link--bottom-twitter" target="_blank"
                                href="<?php echo $linkTwitter; ?>">Twitter</a>
@@ -128,11 +141,14 @@ get_header();
                     ?>
                     <div class="card">
                         <div class="card__image">
-                            <img class="card__avatar" src="<?php echo esc_url($leaderAvatar['url']); ?>"
-                                 alt="<?php echo esc_attr($leaderAvatar['alt']); ?>"/>
+                            <div class="card__avatar">
+                                <img data-scroll data-scroll-speed="-1" src="<?php echo esc_url($leaderAvatar['url']); ?>"
+                                     alt="<?php echo esc_attr($leaderAvatar['alt']); ?>"/>
+                            </div>
 
                             <div class="card__links">
-                                <a class="card__link card__link--linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+                                <a class="card__link card__link--linkedin" target="_blank"
+                                   href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
 
                                 <a class="card__link card__link--twitter" target="_blank"
                                    href="<?php echo $linkTwitter; ?>">Twitter</a>
@@ -144,7 +160,8 @@ get_header();
                         <p class="card__role"><?php echo $leaderRole; ?></p>
 
                         <div class="card__links--bottom">
-                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank"
+                               href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
 
                             <a class="card__link--bottom card__link--bottom-twitter" target="_blank"
                                href="<?php echo $linkTwitter; ?>">Twitter</a>
@@ -165,11 +182,14 @@ get_header();
                     ?>
                     <div class="card">
                         <div class="card__image">
-                            <img class="card__avatar" src="<?php echo esc_url($leaderAvatar['url']); ?>"
-                                 alt="<?php echo esc_attr($leaderAvatar['alt']); ?>"/>
+                            <div class="card__avatar">
+                                <img data-scroll data-scroll-speed="-1" src="<?php echo esc_url($leaderAvatar['url']); ?>"
+                                     alt="<?php echo esc_attr($leaderAvatar['alt']); ?>"/>
+                            </div>
 
                             <div class="card__links">
-                                <a class="card__link card__link--linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+                                <a class="card__link card__link--linkedin" target="_blank"
+                                   href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
 
                                 <a class="card__link card__link--twitter" target="_blank"
                                    href="<?php echo $linkTwitter; ?>">Twitter</a>
@@ -181,7 +201,8 @@ get_header();
                         <p class="card__role"><?php echo $leaderRole; ?></p>
 
                         <div class="card__links--bottom">
-                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank" href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
+                            <a class="card__link--bottom card__link--bottom-linkedin" target="_blank"
+                               href="<?php echo $linkLinkedin; ?>">LinkedIn</a>
 
                             <a class="card__link--bottom card__link--bottom-twitter" target="_blank"
                                href="<?php echo $linkTwitter; ?>">Twitter</a>

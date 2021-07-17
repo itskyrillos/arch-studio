@@ -11,11 +11,14 @@ get_header();
     <div class="page-title"><?= the_title() ?></div>
 
     <section class="contact">
-        <?php
-        $imageContact = get_field('contact_image');
-        if (!empty($imageContact)) : ?>
-            <img data-scroll data-scroll-speed="1" class="contact__background" src="<?php echo esc_url($imageContact['url']); ?>" alt=""/>
-        <?php endif; ?>
+        <div class="contact__background" data-scroll>
+            <?php
+            $imageContact = get_field('contact_image');
+            if (!empty($imageContact)) : ?>
+                <img data-scroll data-scroll-speed="-2" loading="lazy"
+                     src="<?php echo esc_url($imageContact['url']); ?>" alt=""/>
+            <?php endif; ?>
+        </div>
 
         <div class="contact__content">
             <h1 class="contact__title"><?php the_field('contact_main_title'); ?></h1>

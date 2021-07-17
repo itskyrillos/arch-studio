@@ -1,5 +1,4 @@
 .navigation {
-  //position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,6 +11,7 @@
   margin-right: auto;
   z-index: 1000;
   transition: top 0.4s ease-in-out;
+  position: relative;
 
   @include phone {
     width: 100%;
@@ -105,7 +105,8 @@
     }
 
     .line2 {
-      opacity: 1;
+      transform-origin: right center;
+      transform: scaleX(1);
     }
 
     .line3 {
@@ -126,8 +127,8 @@
     transition: all 0.3s ease-in-out;
   }
   .line2 {
-    opacity: 0;
     transition: all 0.3s ease-in-out;
+    transform: scaleX(0);
   }
   .line3 {
     transform: rotate(45deg) translateY(1px);

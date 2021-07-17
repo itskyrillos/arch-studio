@@ -12,17 +12,16 @@
     ?>
 </head>
 
-<body data-barba="wrapper" >
+<body data-barba="wrapper">
+<div class="circle"></div>
+
 <div class="transition">
-    <div class="transition__layer layer1"></div>
-    <div class="transition__layer layer2"></div>
-    <div class="transition__layer layer3"></div>
+    <div class="transition__layer"></div>
+    <div class="transition__layer-logo"></div>
+    <div class="transition__logo"></div>
 </div>
 
-<div data-scroll-container>
-
-
-
+<div class="smooth-scroll">
 <nav class="navigation" data-scroll-section>
     <a class="navigation__logo" href="<?php echo home_url(); ?>">
         Home

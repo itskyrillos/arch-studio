@@ -17,10 +17,19 @@
     position: absolute;
     width: 60%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
     top: 0;
     left: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+      width: 140%;
+      height: 140%;
+      object-fit: cover;
+      object-position: center;
+    }
 
     @include tablet {
       width: 100%;
@@ -48,6 +57,7 @@
     padding: 160px 0 0 180px;
     z-index: 100;
     background-color: $white;
+    bottom: -1px;
 
     @include tablet {
       width: 35rem;
@@ -134,11 +144,19 @@
   }
 
   &__image {
-    //position: relative;
     width: 50%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+      object-position: center;
+    }
 
     @include tablet {
       display: none;
@@ -217,10 +235,19 @@
   &__avatar {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
     position: relative;
     transition: opacity 0.4s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 
   &__links {
