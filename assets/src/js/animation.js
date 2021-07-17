@@ -118,6 +118,22 @@ barba.init({
         animationEnter();
       },
     },
+    {
+      name: "self",
+      enter() {
+        gsap.fromTo(
+          ".smooth-scroll",
+          {
+            opacity: 0,
+          },
+          {
+            duration: 1,
+            opacity: 1,
+            ease: "power4.inOut",
+          }
+        );
+      },
+    },
   ],
 });
 
