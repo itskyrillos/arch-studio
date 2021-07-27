@@ -2,46 +2,154 @@
 get_header();
 ?>
 
-<h3><?= the_title() ?></h3>
 
-<?php
-// the query
-$args = array(
-    'order' => 'ASC',
-    'tag' => 'Slide'
-);
+<main data-barba="container" data-barba-namespace="home">
+    <div class="page-title"><?= the_title() ?></div>
 
-$query = new WP_Query($args); ?>
+    <header>
 
-<?php if ($query->have_posts()) : ?>
-    <div class="slider">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
+        <?php
+        // the query
+        $args = array(
+            'post_type' => 'post',
+            'order' => 'ASC',
+            'tag' => 'Slide',
+            'post_per_page' => '4'
+        );
 
-                <?php
-                $linkPortfolio = get_field('home_header_link');
+        $query = new WP_Query($args);
 
-                while ($query->have_posts()) : $query->the_post(); ?>
-                    <div class="swiper-slide">
-                        <img class="slider__image" src="<?= the_post_thumbnail_url('full'); ?>" alt="">
-                        <div class="slider__content">
-                            <div class="slider__title"><?= get_the_title(); ?></div>
-                            <p><?= get_the_content(); ?></p>
-                        </div>
-                        <a href="<?php echo esc_url($linkPortfolio); ?>"><?php the_field('home_header_link_text'); ?></a>
+        if ($query->have_posts()) : ?>
+            <div class="slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+
+                        <?php
+                        $linkPortfolio = get_field('home_header_link');
+                        $textLinkPortfolio = get_field('home_header_link_text');
+
+                        while ($query->have_posts()) : $query->the_post(); ?>
+                            <div class="swiper-slide">
+                                <img class="slider__image" loading="lazy" src="<?= the_post_thumbnail_url('full'); ?>"
+                                     alt="">
+
+                                <div class="slider__content">
+                                    <div class="slider__title"><?= get_the_title(); ?></div>
+
+                                    <p><?= get_the_content(); ?></p>
+                                </div>
+
+                                <a class="slider__link link--arrow"
+                                   href="<?php echo esc_url($linkPortfolio); ?>"><?php echo $textLinkPortfolio ?></a>
+                            </div>
+                        <?php endwhile; ?>
+
+                        <?php wp_reset_postdata(); ?>
                     </div>
-                <?php endwhile; ?>
+                </div>
 
-                <?php wp_reset_postdata(); ?>
+                <div class="swiper-pagination"></div>
+            </div>
+        <?php endif; ?>
+
+    </header>
+
+    <section class="welcome">
+        <h1 class="welcome__title" data-scroll data-scroll-speed="1"><?php the_field("home_main_title"); ?></h1>
+
+        <div class="welcome__content-block">
+            <div class="welcome__content">
+                <h2 class="welcome__content-title"><?php the_field("home_welcome_title"); ?></h2>
+
+                <div class="welcome__content-text"><?php the_field('home_welcome_text'); ?></div>
+            </div>
+
+            <div class="welcome__image">
+                <?php
+                $image = get_field('home_welcome_image');
+
+                if (!empty($image)) : ?>
+                    <img data-scroll data-scroll-speed="-1" loading="lazy" src="<?php echo esc_url($image['url']); ?>"
+                         alt=""/>
+                <?php endif; ?>
             </div>
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
+    </section>
 
-<?php else : ?>
-    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?>
+    <section class="team" data-scroll>
+        <div class="team__background">
+            <?php
+            $image = get_field('home_about_background');
 
+            if (!empty($image)) : ?>
+                <img data-scroll data-scroll-speed="-1" loading="lazy" src="<?php echo esc_url($image['url']); ?>"
+                     alt=""/>
+            <?php endif; ?>
+        </div>
+
+        <div class="team__content" data-scroll data-scroll-speed="1">
+            <?php the_field("home_about_title"); ?>
+
+            <a class="team__link link--arrow"
+               href="<?php the_field('home_about_link'); ?>"><?php the_field('home_about_link_text'); ?></a>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="featured__top">
+            <h2 class="featured__title"><?php the_field('home_featured_title'); ?></h2>
+
+            <a class="featured__link link--arrow"
+               href="<?php the_field('home_featured_link'); ?>"><?php the_field('home_featured_link_text'); ?></a>
+        </div>
+
+        <?php
+        // the query
+        $args = array(
+            'post_type' => 'post',
+            'order' => 'DESC',
+            'tag' => 'Featured',
+            'post_per_page' => '3'
+        );
+
+        $query = new WP_Query($args); ?>
+
+        <div class="featured__posts">
+            <?php if ($query->have_posts()) : ?>
+
+                <?php
+                $linkPortfolio = get_field('home_featured_link');
+                $postNumber = 1;
+
+                while ($query->have_posts()) : $query->the_post(); ?>
+                    <a class="featured__post-link" href="<?php echo esc_url($linkPortfolio); ?>">
+                        <article class="featured__post">
+                            <div class="post__image">
+                                <img data-scroll data-scroll-speed="-1" loading="lazy"
+                                     src="<?= the_post_thumbnail_url('full'); ?>" alt="">
+                            </div>
+
+                            <div class="post__number"><?php echo $postNumber; ?></div>
+
+                            <div class="post__content">
+                                <h3 class="post__content-title"><?= get_the_title(); ?></h3>
+
+                                <p class="post__content-text">View All Projects</p>
+                            </div>
+                        </article>
+                    </a>
+                    <?php
+                    $postNumber++;
+                endwhile;
+
+                wp_reset_postdata();
+
+            endif; ?>
+        </div>
+        <a class="featured__link--bottom link--bottom"
+           href="<?php the_field('home_featured_link'); ?>"><?php the_field('home_featured_link_text'); ?></a>
+    </section>
+</main>
 <?php
 get_footer();
 ?>

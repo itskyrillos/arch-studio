@@ -1,0 +1,14 @@
+.circle {
+  width: 1rem;
+  height: 1rem;
+  background-color: $very-dark-blue;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  @include tablet {
+    display: none;
+  }
+}
