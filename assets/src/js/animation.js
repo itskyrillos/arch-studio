@@ -106,7 +106,6 @@ const loader = () => {
 loader();
 
 barba.init({
-  debug: true,
   transitions: [
     {
       name: "page-transition",
